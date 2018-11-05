@@ -1,0 +1,10 @@
+croissant.jpg croissantTuga.jpg
+baguette.jpg baguetteTuga.jpg
+melon.jpg melonTuga.jpg
+tower.jpg towerTuga.jpg
+revolution.jpg revolutionTuga.jpg
+cheese.jpg cheeseTuga.jpg
+wine.jpg wineTuga.jpg
+person.jpg personTuga.jpg
+museum.jpg museumTuga.jpg
+opera.jpg operaTuga.jpg

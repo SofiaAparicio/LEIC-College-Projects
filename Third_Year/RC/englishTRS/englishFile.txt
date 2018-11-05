@@ -1,0 +1,11 @@
+eevee.jpg eeveeTuga.jpg
+maggie.jpg maggieTuga.jpg
+cat.jpg catTuga.jpg
+cow.jpg cowTuga.jpg
+pig.jpg pigTuga.jpg
+dog.jpg dogTuga.jpg
+blue.jpg blueTuga.jpg
+unicorn.jpg unicornTuga.jpg
+chair.jpg chairTuga.jpg
+lamp.jpg lampTuga.jpg
+ACM.jpg ACMTuga.jpg

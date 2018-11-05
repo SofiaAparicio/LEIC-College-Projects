@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=1.25in, bottom=1.25in, left=1.5in, right=1.5in]{geometry}
+
+\begin{document}
+\section*{Análise Heurística do Modelo do Grupo 32}
+Aqui se apresenta uma análise ao protótipo de papel, identificando erros com base nas 10 heurísticas de Nielson e propondo possíveis soluções. Os problemas estão ordenados por grau de severidade, do mais severo para o menos importantes\\
+\\
+\textbf{Problema:} Não pede confirmação aquando da oferta de uma bebida.\\
+\textbf{Heurística:} H2.5 - Evitar erros.\\
+\textbf{Descrição:} O facto de mal o utilizador pressionar no botão para oferecer uma bebida ela passa logo para a sua conta, sem ser possível cancelar, abre portas para situações em que o utilizador oferece uma bebida sem querer e não pode fazer nada em relação a isso.\\
+\textbf{Correção:} Acrescentar uma caixa de dialogo intermédia que pergunta ao utilizador se tem acerteza que quer oferecer uma bebida.\\
+\textbf{Severidade:} 4\\
+\\
+\textbf{Problema:} Impossibilidade cancelar o pedido de uma bebida.\\
+\textbf{Heurística:} H2.3 - O utilizador controla e exerce livre arbítrio.\\
+\textbf{Descrição:} A escolha da bebida é final, sendo que esta passa logo automaticamente para o pedido/conta, não sendo possível cancelar/desfazer a escolha em caso de engano.\\
+\textbf{Correção:} Acrescentar a opção de desfazer uma escolha logo após a fazer/antes da bebida chegar.\\
+\textbf{Severidade:} 4\\
+\\
+\textbf{Problema:} Dificuldade de navegação para as funcionalidades\\
+\textbf{Heurística:} H2-1: Tornar o sistema visível\\
+\textbf{Descrição:} No menu principal, em que se têm de arrastar o ecrã para o lado para mudar de funcionalidade, não é claro se devemos arrastar para a esquerda ou direita quando estamos à procura de uma funcionalidade.\\
+\textbf{Correção:} Mudar o layout para um em que todas as funcionalidades estão visiveis ou dar indicações de como as funcionalidades estão mapeadas nos ecrãs.\\
+\textbf{Severidade:} 3\\
+\\
+\textbf{Problema:} Falta de informação sobre o estado do pedido\\
+\textbf{Heurística:} H2-1: Tornar o sistema visível\\
+\textbf{Descrição:} Não há qualquer tipo de informação sobre se os pedidos feitos já foram recebidos, estão a ser preparados, ou já estão prontos, nem qualquer tipo de métrica sobre o tempo de espera.\\
+\textbf{Correção:} Adicionar indicações sobre o estado do pedido e/ou quanto tempo ainda falta.\\
+\textbf{Severidade:} 3\\
+\\
+\textbf{Problema:} Impossibilidade de pedir mais do que uma bebida de uma só vez\\
+\textbf{Heurística:} H2-7: Flexibilidade e Eficiência\\
+\textbf{Descrição:} Não é possível pedir mais do que uma bebida de cada vez, sendo o utilizador obrigado a voltar repetir o processo de voltar ao ecrã principal e pedir uma bebida.\\
+\textbf{Correção:} Permitir ao utilizador adicionar varias bebidas e só depois passar ao ecrã seguinte.\\
+\textbf{Severidade:} 3\\
+\clearpage
+\noindent\textbf{Problema:} A numero de ecrãs em que a mesa está divida é estático\\
+\textbf{Heurística:} H2-7: Flexibilidade e Eficiência\\
+\textbf{Descrição:} O facto da aplicação estar divida em ecrãs individualizados, quando o numero de utilizadores é maior que o numero de ecrãs em que a mesa está dividida, certos utilizadores vão ficar negligenciados, ou vai originar situações de divisão estranhas\\
+\textbf{Correção:} Permitir mudar o número de ecrãs em que a aplicação se divide (dentro de um limite de máximo).\\
+\textbf{Severidade:} 3\\
+\\
+\textbf{Problema:} Não é possível rodar o \textit{layout}\\
+\textbf{Heurística:} H2-7: Flexibilidade e Eficiência\\
+\textbf{Descrição:} A aplicação barista encontra-se divida em quatro ecrãs, na mesa, no entanto não é possível rodar os ecrãs, sendo o utilizador obrigado a sentar-se de modo a ficar orientado ao ecrã\\
+\textbf{Correção:} Permitir rodar a a orientação dos ecrãs, de modo a esta se adaptar ao utilizador e não ao contrário.\\
+\textbf{Severidade:} 3\\
+\\
+\textbf{Problema:} Impossibilidade de remover seleções de músicas.\\
+\textbf{Heurística:} H2-3: Utilizador controla e exerce livre arbítrio\\
+\textbf{Descrição:} Não é possível eliminar musicas após estas serem escolhidas, sendo só possível mudar a ordem de seleção.\\
+\textbf{Correção:} Criar uma opção que permita remover musica da \textit{playlist} ou pelo menos para remover todas as musicas.\\
+\textbf{Severidade:} 3\\
+\\
+\textbf{Problema:} Impossibilidade de terminar o jogo mais cedo\\
+\textbf{Heurística:} H2-3: Utilizador controla e exerce livre arbítrio\\
+\textbf{Descrição:} No jogo do questionário, não era possível ao utilizador terminar o jogo mais cedo e saber os resultados, tendo de cancelar e perdendo todo o progresso, ou ir até ao fim para saber a sua pontuação\\
+\textbf{Correção:} Permitir finalizar o jogo quando lhe apetece, apresentando o resultado relativo as perguntas respondidas\\
+\textbf{Severidade:} 3\\
+\\
+\textbf{Problema:} Falta de consistência nos títulos dos ecrãs.\\
+\textbf{Heurística:} H2-4: Consistência e adesão a normas.\\
+\textbf{Descrição:} O \textit{layouts} superior dos ecrãs, onde se situam os títulos/descrições, muda de funcionalidade para funcionalidade, não havendo consistência.\\
+\textbf{Correção:} Optar por um dos \textit{layouts} e por-lo em todas as funcionalidades.\\
+\textbf{Severidade:} 2\\
+\\
+\textbf{Problema:} Demasiados botões no ecrã ao mesmo tempo.\\
+\textbf{Heurística:} H2-8: Desenho estético e minimalista.\\
+\textbf{Descrição:} Há conservação da maior parte dos botões do menu principal mesmo quando estamos a usar as funcionalidades, ficando o ecrã muito cheio de informação.\\
+\textbf{Correção:} Retirar os botões desnecessários aquando da utilização das funcionalidades.\\
+\textbf{Severidade:} 2\\
+\\
+
+
+
+\end{document}

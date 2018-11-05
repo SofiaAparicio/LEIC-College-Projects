@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<title>BarISTa</title>
+    	<link rel="stylesheet" href="css/style.css">
+        <link href='fonts/open_sans.css' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.js"></script>
+        <script src="js/jquery.balloon.js"></script>
+
+	</head>
+	<body>
+
+        <div class="title">
+        Inicio
+        </div>
+
+        <!--Main functionality buttons -->
+  		<div class="main_buttons_div">
+
+    	<button class="button" id="food_drink_button" onclick="location.href='pedir.html';">
+        <img class="main_icons" src="icons/food_drink.png" id="food_drink_icon">
+        <figcaption class="main_button_text"> Pedir </figcaption>
+        </button>
+
+        <button class="button" id="music_button" onclick="location.href='votacao.html';" >
+        <img class="main_icons" src="icons/music.png" id="music_icon">
+        <figcaption class="main_button_text"> Votar Musica </figcaption>
+        </button>
+
+        <button class="button" id="games_button" onclick="location.href='jogar.html'">
+        <img class="main_icons" src="icons/games.png" id="games_icon">
+        <figcaption class="main_button_text"> Jogar </figcaption>
+        </button>
+
+		</div>
+
+        <div class="rotate_button_div">
+
+        <button class="button" id="rotate_button" onclick="not_implemented_fn()">
+        <img class="footer_icons" src="icons/rotate.png" id="rotate_icon">
+        <figcaption class="footer_button_text"> Rodar </figcaption>
+        </button>
+
+        </div>
+
+        <div class="footer_buttons_div">
+
+        <button class="button" id="musicPlaying_button" title="Mumford & Sons - Believe">
+        <img class="footer_icons" src="icons/musicPlaying.png" id="rotate_icon">
+        <figcaption class="footer_button_text"> A tocar </figcaption>
+        </button>
+        
+
+        <button class="button" id="money_button" onclick="location.href='pagamento.html';">
+        <img class="footer_icons" src="icons/money.png" id="money_icon">
+        <figcaption class="footer_button_text"> Pagar </figcaption>
+        </button>
+
+        <button class="button" id="bill_button">
+        <img class="footer_icons" src="icons/bill.png" id="bill_icon">
+        <figcaption class="footer_button_text"> Conta </figcaption>
+        </button>
+
+        <button class="button" id="help_button" onclick="help_fn('#main_help_box')">
+        <img class="footer_icons" src="icons/help.png" id="help_icon">
+        <figcaption class="footer_button_text"> Ajuda </figcaption>
+        </button>
+
+        </div>
+
+
+        <!-- Not Implemeted Box -->
+        <div id="not_implemented_box" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span class="close">x</span>
+                <p>Funcionalidade nao implementada</p>
+            </div>
+        </div>
+		
+		<!-- Help Box -->
+        <div id="main_help_box" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span class="close">x</span>
+				<h2> Ajuda </h2>
+				Este é o menu inicial. Aqui encontra 3 botões principais: 
+					<ol>
+						<li> Um para pedir </li>
+						<li> Outro onde pode votar em diferentes músicas </li>
+						<li> O terceiro serve para escolher jogos para jogar no bar.</li>
+					</ol>
+				<p> No canto inferior direito, encontra outros botões: 
+					<ol>
+						<li>  Um para verificar a música que está a dar no momento e 
+					a próxima a dar (A tocar)</li>
+						<li>  Um para pagar a sua conta (Pagar) </li>
+						<li>  Outro para consultar a sua conta (Conta) </li>
+					</ol></p>
+            </div>
+        </div>
+
+    <script src="coverflow/jquery.coverflow.js"></script>
+    <script src="keyboard/dist/js/jquery.keyboard.min.js"></script>
+    <script src="js/coverflow.js"></script>
+
+    <script src="js/cookie_utils.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/modals.js"></script>
+	</body>
+</html>

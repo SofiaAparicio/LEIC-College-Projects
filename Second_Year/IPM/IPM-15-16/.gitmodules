@@ -1,0 +1,6 @@
+[submodule "barista/coverflow"]
+	path = barista/coverflow
+	url = git@github.com:vanderlee/coverflow.git
+[submodule "barista/keyboard"]
+	path = barista/keyboard
+	url = git@github.com:Mottie/Keyboard.git

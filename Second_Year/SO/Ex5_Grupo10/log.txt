@@ -1,0 +1,33 @@
+iteracao 0
+pid: 5153 execution time: 0 s
+total execution time: 0 s
+iteracao 1
+pid: 5357 execution time: 25 s
+total execution time: 25 s
+iteracao 2
+pid: 7830 execution time: 0 s
+total execution time: 25 s
+iteracao 3
+pid: 7831 execution time: 3 s
+total execution time: 28 s
+iteracao 4
+pid: 8023 execution time: 0 s
+total execution time: 28 s
+iteracao 5
+pid: 8024 execution time: 25 s
+total execution time: 53 s
+iteracao 6
+pid: 9926 execution time: 0 s
+total execution time: 53 s
+iteracao 7
+pid: 9927 execution time: 1 s
+total execution time: 54 s
+iteracao 8
+pid: 10100 execution time: 22 s
+total execution time: 76 s
+iteracao 9
+pid: 10266 execution time: 22 s
+total execution time: 98 s
+iteracao 10
+pid: 10752 execution time: 21 s
+total execution time: 119 s

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<title>BarISTa</title>
+    	<link rel="stylesheet" href="css/style.css">
+        <link href='fonts/open_sans.css' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.js"></script>
+        <script src="js/jquery.balloon.js"></script>
+		<script src="js/cookie_utils.js"></script>
+
+				<style>
+
+				/* Iconfonts
+				 * ============================ */
+				@import "http://weloveiconfonts.com/api/?family=fontawesome";
+				@import "http://weloveiconfonts.com/api/?family=brandico";
+				[class*="fontawesome-"]:before {
+					font-family: "FontAwesome", sans-serif;
+				}
+
+				[class*="brandico-"]:before {
+					font-family: "brandico", sans-serif;
+				}
+
+				</style>
+
+	</head>
+	<body>
+
+        <div class="title">
+        Eu nunca...
+        </div>
+
+		<!--- Botão Convidar -->
+		<div id="invite_button_div">
+			<button class="button" id="invite_button_new" onclick="location.href='jogar.html';">
+				<div class="footer_icons fontawesome-arrow-left" ></div>
+			</button>
+			<button class="button" id="invite_button">
+			<img class="footer_icons" src="icons/invite.png" id="rotate_icon">
+			<figcaption class="footer_button_text"> Convidar Mesa </figcaption>
+			</button>
+		</div>
+
+        <div id="highscore_section">
+            <button id="highscore_button" class="button">
+                <div id="highscore_button_div" class="buttons">
+                    Perguntas <br> mais dificeis
+                </div>
+            </button>
+
+
+        </div>
+
+
+
+        <div id="next_section">
+            <button id="next_button" class="button">
+                <div id="next_button_div " class="buttons fontawesome-arrow-right">
+                </div>
+            </button>
+        </div>
+
+        <div class="question">
+        <h3></h3>
+				<div id="already_section">
+						<button id="already_button" class="button">
+								<div id="already_button_div" class="buttons">
+										Já
+								</div>
+						</button>
+				</div>
+
+				<div id="never_section">
+						<button id="never_button" class="button">
+								<div id="never_button_div" class="buttons">
+										Nunca
+								</div>
+						</button>
+				</div>
+        </div>
+
+				<div id="terminar_section">
+						<button id="terminar_button" class="button">
+								<div id="terminar_button_div" class="buttons">
+										Terminar
+								</div>
+						</button>
+				</div>
+
+
+        <div id="home_button_div">
+            <button class="button" id="home_button" onclick="location.href='barista.html';">
+            <img class="footer_icons" src="icons/home.png" id="rotate_icon">
+            <figcaption class="footer_button_text"> Início </figcaption>
+            </button>
+
+        </div>
+
+        <div class="rotate_button_div">
+
+        <button class="button" id="rotate_button" onclick="not_implemented_fn()">
+        <img class="footer_icons" src="icons/rotate.png" id="rotate_icon">
+        <figcaption class="footer_button_text"> Rodar </figcaption>
+        </button>
+
+        </div>
+
+        <div class="footer_buttons_div">
+
+        <button class="button" id="musicPlaying_button" title="Mumford & Sons - Believe">
+        <img class="footer_icons" src="icons/musicPlaying.png" id="rotate_icon">
+        <figcaption class="footer_button_text"> A tocar </figcaption>
+        </button>
+
+        <button class="button" id="money_button" onclick="not_implemented_fn()">
+        <img class="footer_icons" src="icons/money.png" id="money_icon">
+        <figcaption class="footer_button_text"> Pagar </figcaption>
+        </button>
+
+        <button class="button" id="bill_button">
+        <img class="footer_icons" src="icons/bill.png" id="bill_icon">
+        <figcaption class="footer_button_text"> Conta </figcaption>
+        </button>
+
+        <button class="button" id="help_button" onclick="not_implemented_fn()">
+        <img class="footer_icons" src="icons/help.png" id="help_icon">
+        <figcaption class="footer_button_text"> Ajuda </figcaption>
+        </button>
+
+        </div>
+
+        <div id='cart' class="cartcenas">
+            <span class="closecart">x</span>
+            <h2>Perguntas mais dificeis</h2>
+            <div class='perguntas_div'>
+
+            </div>
+        </div>
+
+
+
+        <!-- Not Implemeted Box -->
+        <div id="not_implemented_box" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span class="close">x</span>
+								<h2>Regras</h2>
+                <p><ol>
+								  <li>O BarISTa sugere situações.</li>
+								  <li>Os jogadores tem de carregar em "Já" ou "Nunca" caso uma dada situação já lhe tenha acontecido ou não.</li>
+								  <li>Quando algum jogador preciona o botão "Já", deve dar um golo na babida.</li>
+									<li>Caso o jogador queria passar para a pergunta seguinte carregue na seta, que se encontra à direita das perguntas.</li>
+									<li>Caso queria terminar o jogo, basta carregar no botão terminar, que se encontra de baixo das perguntas.</li>
+								</ol></p>
+            </div>
+        </div>
+
+
+
+		<!-- Invite accepted Box -->
+        <div id="invite_accepted_box" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <p>O seu convite foi aceite!</p>
+				<button id="inicialize_button"> Iniciar Jogo </button>
+				<button id="cancel_button"> Cancelar </button>
+            </div>
+        </div>
+
+        <!-- Invite accepted Box -->
+        <div id="end_game_box" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <p>Gostaria de ir para o menu das bebidas?</p>
+                <button id="drink_shortcut_button"> &nbsp; Sim &nbsp;</button>
+                <button id="homepage_shortcut_button"> Pagina Principal  </button>
+            </div>
+        </div>
+
+
+    <!-- Music Button -->
+    <script src="coverflow/jquery.coverflow.js"></script>
+    <script src="keyboard/dist/js/jquery.keyboard.min.js"></script>
+    <script src="js/coverflow.js"></script>
+
+    <script src="js/cookie_utils.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/eu_nunca.js"></script>
+	<script src="js/jogar.js"></script>
+	</body>
+</html>

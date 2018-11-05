@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=1.25in, bottom=1.25in, left=1.5in, right=1.5in]{geometry}
+
+\begin{document}
+\section*{Análise Heurística do Modelo do Grupo 12}
+Aqui se apresenta uma análise ao protótipo de papel, identificando erros com base nas 10 heurísticas de Nielson e propondo possíveis soluções. Os problemas estão ordenados por grau de severidade, do mais severo para o menos importantes\\
+\\
+\textbf{Problema:} Não pede confirmação aquando de chamar um táxi.\\
+\textbf{Heurística:} H2.5 - Evitar erros.\\
+\textbf{Descrição:} O facto de mal o utilizador pressionar no botão de chamar o taxi, ele vir logo, deixa-o exposto a situações em que o táxi é chamado por engano pois o utilizador pressionou o botão sem querer.\\
+\textbf{Correção:} Acrescentar uma caixa de dialogo intermédia que pergunta ao utilizador se tem acerteza que quer chamar um táxi.\\
+\textbf{Severidade:} 4\\
+\\
+\textbf{Problema:} Não é possível cancelar o pedido de uma bebida.\\
+\textbf{Heurística:} H2.3 - O utilizador controla e exerce livre arbítrio.\\
+\textbf{Descrição:} Quando o utilizador escolhe uma bebida, ela passa automaticamente para o pedido/conta, não sendo possível cancelar/desfazer a escolha.\\
+\textbf{Correção:} Acrescentar a opção de desfazer uma escolha logo após a fazer/antes da bebida chegar.\\
+\textbf{Severidade:} 4\\
+\\
+\textbf{Problema:} O pagamento tem de ser efetuado todo de uma só vez.\\
+\textbf{Heurística:} H2.7 - Flexibilidade e eficiência.\\
+\textbf{Descrição:} Não é possível pagar só parte da conta/separar a conta em partes, obrigando os utilizadores a pagar tudo junto.\\
+\textbf{Correção:} Adicionar a opção de pagar apenas certos itens da conta.\\
+\textbf{Severidade:} 3\\
+\\
+\textbf{Problema:} Quando se chama um táxi, não há informação sobre quanto tempo demora.\\
+\textbf{Heurística:} H2.1 - Tornar estado do sistema visível.\\
+\textbf{Descrição:} Quando o utilizador quer chamar um táxi, a aplicação não apresenta qualquer tipo de informação sobre quanto tempo o táxi pode demorar, o que poderia influenciar a escolha de chamar um táxi.\\
+\textbf{Correção:} Acrescentar uma informação sobre o tempo médio de espera por um táxi.\\
+\textbf{Severidade:} 3\\
+\\
+\textbf{Problema:} Quando se chama o empregado, não há informação sobre quanto tempo demora.\\
+\textbf{Heurística:} H2.1 - Tornar estado do sistema visível.\\
+\textbf{Descrição:} Quando o utilizador precisa do empregado por alguma razão, a aplicação apenas avisa que o empregado está a caminho, não havendo qualquer informação sobre se pode demorar muito por ter muitos pedidos, estar ocupado, etc.\\
+\textbf{Correção:} Acrescentar uma informação sobre o tempo médio de espera/estado do empregado.\\
+\textbf{Severidade:} 3
+\clearpage
+\noindent\textbf{Problema:} As janelas não têm informação sobre a funcionalidade que representam.\\
+\textbf{Heurística:} H2.6 - Reconhecimento em vez de lembrança.\\
+\textbf{Descrição:} As janelas onde as funcionalidades decorrem não apresentam um titulo ou descrição do que são, podendo não ser claro para um utilizador inexperiente o que é que a janela está ali a fazer.\\
+\textbf{Correção:} Acrescentar um titulo as janelas que descreva as funcionalidades.\\
+\textbf{Severidade:} 3\\
+\\
+\textbf{Problema:} Os botões para funcionalidades não têm informação textual sobre o que fazem.\\
+\textbf{Heurística:} H2.6 - Reconhecimento em vez de lembrança.\\
+\textbf{Descrição:} Os botões para funcionalidades do pagina inicial apenas têm ícones, sem nenhum texto, obrigando o utilizador que não percebe o significado do icon a ir à ajuda ou experimentar.\\
+\textbf{Correção:} Acrescentar texto por baixo dos ícones a descrever a funcionalidade.\\
+\textbf{Severidade:} 3\\
+\\
+\textbf{Problema:} Impossibilidade de remover nomeações de músicas.\\
+\textbf{Heurística:} H2-3: Utilizador controla e exerce livre arbítrio\\
+\textbf{Descrição:} Após o utilizador nomear uma música para os sistema de votação, é lhe impossivel retirar essa nomeação.\\
+\textbf{Correção:} Permitir ao utilizador retirar as suas nomeações (ou pelo menos as que não tenham sido votadas por mais ninguém).\\
+\textbf{Severidade:} 3\\
+\\
+\textbf{Problema:} Há botões em que pressionar não faz nada.\\
+\textbf{Heurística:} H2.5 - Evitar erros.\\
+\textbf{Descrição:} Os botões para funcionalidades não implementadas encontram-se disponíveis na mesma, apenas estando o ícone "riscado", sendo que pressionar neles não faz nada. O utilizador pode ser induzido em erro, não percebendo porque é que o botão não está a funcionar.\\
+\textbf{Correção:} Remover os botões ou quando os botões são pressionados, apresentar uma caixa de diálogo a explicar que a funcionalidade ainda não está disponível.\\
+\textbf{Severidade:} 3\\
+\\
+\textbf{Problema:} Há inconsistências nos botões que apresentam o estado.\\
+\textbf{Heurística:} H2.4 - Consistência e adesão a normas.\\
+\textbf{Descrição:} Os únicos dois botões que apresentam estado (musica do bar, e pedidos) e encontram-se do lado esquerdo do ecrã, tem apresentações diferentes, sendo um um icon e outro uma caixa de texto.\\
+\textbf{Correção:} Mudar ambos os botões para ícones ou para caixas de texto.\\
+\textbf{Severidade:} 2\\
+\\
+\textbf{Problema:} Não há limite de janelas abertas.\\
+\textbf{Heurística:} H2.8 - Desenho	estético	 e minimalista.\\
+\textbf{Descrição:} A aplicação não limita o número de janelas que podem estar no ecrã num certo momento, o que no limite pode causar confusão ao utilizador por já não saber qual janela é qual e sobrecarrega o ecrã de informação já não necessária.\\
+\textbf{Correção:} Limitar o número máximo de janelas abertas num dado momento.\\
+\textbf{Severidade:} 2\\
+\\
+
+
+
+
+\end{document}

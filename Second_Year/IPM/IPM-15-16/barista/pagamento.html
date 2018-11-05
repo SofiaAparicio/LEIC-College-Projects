@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<title>BarISTa</title>
+    	<link rel="stylesheet" href="css/style.css">
+        <link href='fonts/open_sans.css' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.js"></script>
+
+		<script src="js/jquery.balloon.js"></script>
+
+	</head>
+	<body>
+
+        <div class="title">
+        Pagamento
+        </div>
+
+		<!---->
+		<div class= "paymentSection" id="stillToPay"> 
+			<div class="paymentHeader">Por Pagar</div>
+			<ul class='paymentContent payList' id="toPay-items">
+				<div>
+			</ul>
+		</div>
+		
+		<!-- Buttons to move elements from diferent Sections-->
+		<div id="pay_buttons_div">
+			<div>
+				<button class="button pay_buttons" id="right_button" onclick=move_selected(1)>
+				<img class="footer_icons" src="icons/arrow-right.png" id="money_icon">
+				</button>
+			</div>
+			<div>
+				<button class="button pay_buttons" id="left_button" onclick=move_selected(0)>
+				<img class="footer_icons" src="icons/arrow-left.png" id="money_icon">
+				<figcaption class="footer_button_text"> Mover </figcaption>
+				</button>
+			</div>
+		</div>
+		
+		<!---->
+		<div class= "paymentSection" id="Pay"> 
+			<div class="paymentHeader">A Pagar</div>
+			
+			<ul class="paymentContent payList" id="PayContent"></ul>
+			
+			<div id="totalPayment"> Total: <span id="valueTotal" data-valor=0> 0 </span>€ </div>
+			
+			<button class="button" id="payment_button" onclick="pay()">
+			<figcaption class="main_button_text"> Pagar </figcaption>
+			</button>
+		</div>
+		
+		<script id='PayTemplate' type='text/template'>
+		  <li>
+		  <div class="pay-product cart-product">
+		  <div class="quantity">0</div>
+		  </div>
+		  <div class="pay-description">
+			<div class="p-description">
+			<h3></h3>
+			<span class="subtotal"></span>
+		  </div></div></li>
+		</script>
+		
+		<script id='cartItem' type='text/template'>
+		  <li><div class="cart-product">
+		  <input class="quantity" value="1">
+		  </div><div class="cart-description">
+		  <h3></h3>
+		  <span class="subtotal"></span>
+		  </div></li>
+		</script>
+		
+    <!-- Metodo de Pagamento -->
+		<div id="payment_div">
+		<div id='a'> Escolha o seu método de pagamento: </div>
+		
+		<div class="main_buttons_div">
+		
+    	<button class="button" id="cash_button" onclick =pay_money()>
+        <img class="main_icons" src="icons/money.png" id="food_drink_icon">
+        <figcaption class="main_button_text"> Dinheiro </figcaption>
+        </button>
+
+        <button class="button" id="multibanco_button" onclick=pay_atm() >
+        <img class="main_icons" src="icons/multibanco.png" id="music_icon">
+        <figcaption class="main_button_text"> Multibanco </figcaption>
+        </button>
+		
+		</div>
+		</div>
+	<!---->	
+		
+        <!--Footer buttons -->
+		<div id="home_button_div">
+			<button class="button" id="home_button" onclick="location.href='barista.html';">
+			<img class="footer_icons" src="icons/home.png" id="rotate_icon">
+			<figcaption class="footer_button_text"> Início </figcaption>
+			</button>
+		</div>
+
+        <div class="rotate_button_div">
+
+        <button class="button" id="rotate_button" onclick="not_implemented_fn()">
+        <img class="footer_icons" src="icons/rotate.png" id="rotate_icon">
+        <figcaption class="footer_button_text"> Rodar </figcaption>
+        </button>
+
+        </div>
+
+        <div class="footer_buttons_div">
+
+        <button class="button" id="musicPlaying_button" title="Mumford & Sons - Believe">
+        <img class="footer_icons" src="icons/musicPlaying.png" id="rotate_icon">
+        <figcaption class="footer_button_text"> A tocar </figcaption>
+        </button>
+
+        <button class="button" id="money_button" onclick="not_implemented_fn()">
+        <img class="footer_icons" src="icons/money.png" id="money_icon">
+        <figcaption class="footer_button_text"> Pagar </figcaption>
+        </button>
+
+        <button class="button" id="bill_button">
+        <img class="footer_icons" src="icons/bill.png" id="bill_icon">
+        <figcaption class="footer_button_text"> Conta </figcaption>
+        </button>
+
+        <button class="button" id="help_button" onclick="help_fn('#pay_help_box')">
+        <img class="footer_icons" src="icons/help.png" id="help_icon">
+        <figcaption class="footer_button_text"> Ajuda </figcaption>
+        </button>
+
+        </div>
+
+		<!-- Cash Message -->
+		<div id="pay_money_message" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span id="pay_money_message" class="close close_pay">x</span>
+                <p>Introduza o dinheiro e espere pelo troco,
+					obrigado!</p>
+            </div>
+        </div>
+		
+		<!-- Atm Message -->
+		<div id="pay_atm_message" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span id="close_pay_atm_message" class="close close_pay">x</span>
+                <p>Introduza o Cartão e o código,
+					obrigado!</p>
+            </div>
+        </div>
+		
+        <!-- Not Implemeted Box -->
+        <div id="not_implemented_box" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span class="close">x</span>
+                <p>Funcionalidade nao implementada</p>
+            </div>
+        </div>
+		
+		<!-- Help Box -->
+        <div id="pay_help_box" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span class="close">x</span>
+				<h2> Ajuda </h2>
+                <p>Esta é a secção para pagamento.</p>
+				<ol>
+					<li>No 1º rectângulo, encontra todos os itens pedidos que ainda nao foram
+					pagos. Pode escolher os itens que quer pagar, clicando neles.</li>
+					<li>Ao carregar na seta que aponta para a direita,
+					os itens escolhidos passam para o 2ºrectângulo.</li>
+					<li> Se houverem itens que afinal não pretende pagar,
+					clique em cada um e depois carregue na seta a apontar para a esquerda. Isto passa esses itens para 
+					o 1º rectângulo.</li>
+					<li>Ao clicar no botão pagar no 2ºrectângulo, é-lhe mostrado os diferentes tipos de pagamento podendo
+					escolher o que preferir, efetuando assim o pagamento dos itens selecionados anteriormente.</li>
+				</ol>
+            </div>
+        </div>
+
+    <script src="coverflow/jquery.coverflow.js"></script>
+    <script src="keyboard/dist/js/jquery.keyboard.min.js"></script>
+    <script src="js/coverflow.js"></script>
+
+    <script src="js/modals.js"></script>
+	<script src="js/pagar.js"></script>
+	<script src="js/order.js"></script>
+	<script src="js/ask_menu.js"></script>
+	<script src="js/cookie_utils.js"></script>
+	</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<title>BarISTa</title>
+    	<link rel="stylesheet" href="css/style.css">
+        <link href='fonts/open_sans.css' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.js"></script>
+        <script src="js/jquery.balloon.js"></script>
+
+	</head>
+	<body>
+
+        <div class="title">
+        Jogar
+        </div>
+
+        <!--Main functionality buttons -->
+  		<div class="game_buttons_div">
+
+        <button class="button" id="question_game_button" onclick="location.href='eu_nunca.html'" >
+        <img class="main_icons" src="icons/mark.png" id="music_icon">
+        <figcaption class="main_button_text"> Eu nunca... </figcaption>
+        </button>
+
+        <button class="button" id="dice_game_button" onclick="location.href='rollar.html'">
+        <img class="main_icons" src="icons/games.png" id="games_icon">
+        <figcaption class="main_button_text"> Rollar </figcaption>
+        </button>
+
+		</div>
+
+        <div id="home_button_div">
+            <button class="button" id="home_button" onclick="location.href='barista.html';">
+            <img class="footer_icons" src="icons/home.png" id="rotate_icon">
+            <figcaption class="footer_button_text"> Início </figcaption>
+            </button>
+        </div>
+
+        <div class="rotate_button_div">
+
+        <button class="button" id="rotate_button" onclick="not_implemented_fn()">
+        <img class="footer_icons" src="icons/rotate.png" id="rotate_icon">
+        <figcaption class="footer_button_text"> Rodar </figcaption>
+        </button>
+
+        </div>
+
+        <div class="footer_buttons_div">
+
+        <button class="button" id="musicPlaying_button" title="Mumford & Sons - Believe">
+        <img class="footer_icons" src="icons/musicPlaying.png" id="rotate_icon">
+        <figcaption class="footer_button_text"> A tocar </figcaption>
+        </button>
+
+        <button class="button" id="money_button" onclick="not_implemented_fn()">
+        <img class="footer_icons" src="icons/money.png" id="money_icon">
+        <figcaption class="footer_button_text"> Pagar </figcaption>
+        </button>
+
+        <button class="button" id="bill_button">
+        <img class="footer_icons" src="icons/bill.png" id="bill_icon">
+        <figcaption class="footer_button_text"> Conta </figcaption>
+        </button>
+
+        <button class="button" id="help_button" onclick="help_fn('#play_help_box')">
+        <img class="footer_icons" src="icons/help.png" id="help_icon">
+        <figcaption class="footer_button_text"> Ajuda </figcaption>
+        </button>
+
+        </div>
+
+
+        <!-- Not Implemeted Box -->
+        <div id="not_implemented_box" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span class="close">x</span>
+                <p>Funcionalidade nao implementada</p>
+            </div>
+        </div>
+		
+		<!-- Help Box -->
+        <div id="play_help_box" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span class="close">x</span>
+				<h2> Ajuda </h2>
+                <p>Este é o menu dos jogos. Neste pode escolher um dos jogos disponíveis,em cada jogo encontra um botão para
+				para convidar outra mesa para jogar também, botão Convidar. Ao clicar no Convidar, aparece uma janela com as
+				diferentes mesas, podendo escolher aquela com a qual pretende jogar.
+				</p>
+            </div>
+        </div>
+
+ 
+    <script src="coverflow/jquery.coverflow.js"></script>
+    <script src="keyboard/dist/js/jquery.keyboard.min.js"></script>
+    <script src="js/coverflow.js"></script>
+
+    <script src="js/cookie_utils.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/modals.js"></script>
+	</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<title>BarISTa</title>
+    	<link rel="stylesheet" href="css/style.css">
+        <link href='fonts/open_sans.css' rel='stylesheet' type='text/css'>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.js"></script>
+		<script src="js/jquery.balloon.js"></script>
+
+	<style>
+
+	/* Iconfonts
+	 * ============================ */
+	@import "http://weloveiconfonts.com/api/?family=fontawesome";
+	@import "http://weloveiconfonts.com/api/?family=brandico";
+	[class*="fontawesome-"]:before {
+	  font-family: "FontAwesome", sans-serif;
+	}
+
+	[class*="brandico-"]:before {
+	  font-family: "brandico", sans-serif;
+	}
+
+	</style>
+	</head>
+
+	<body>
+
+		<!-- Order Buttons-->
+		<div class="title">Pedir</div>
+		<div id="order_section">
+			<div>
+				<button class="button"onclick="item(cart)">
+					<div class="order_buttons fontawesome-shopping-cart" >
+						Consultar <br> Pedido
+						<span class='cart-quantity empty'>0</span>
+					</div>
+				</button>
+			</div>
+
+		</div>
+
+
+		<!-- Menu buttons-->
+		<div id="section_menu"style="position:absolute;right:44%;top:9%">
+			<div class="menu_buttons">
+			<button class="button" id="drinks_button" onclick=show_menu("Drinks_content")>
+			<img class="main_icons" src="icons/drink.png" id="rotate_icon">
+			<figcaption class="main_button_text"> Bebidas </figcaption>
+			</div>
+			<div class="menu_buttons">
+			<button class="button" id="create_cocktail_button" onclick=show_menu("Create_Cocktail_content")>
+			<img class="main_icons" src="icons/shaker.png" id="rotate_icon">
+			<figcaption class="main_button_text"> Criar Bebida </figcaption>
+			</div>
+			<div class="menu_buttons">
+			<button class="button" id="snacks_button" onclick=show_menu("Snacks_content")>
+			<img class= "main_icons" src="icons/food.png" id="rotate_icon">
+			<figcaption class="main_button_text"> Snacks </figcaption>
+			</div>
+		</div>
+
+		<!-- Contents for the Drinks button-->
+		<div class="menu_content" id="Drinks_content">
+			<div class="menu_header">
+				<a>Bebidas</a>
+			</div>
+			<p class="bebidas">Bebidas alcoolicas</p>
+			<section class="shop"></section>
+
+			<p class="bebidas">Bebidas não alcoolicas</p>
+			<section class="shop1"></section>
+		</div>
+
+
+
+		<!-- / Product Templates for Shop & Cart -->
+
+		<script id='productTemplate' type='text/template'>
+		  <div class="product">
+				<div class="merdas"></div>
+				<div class="p"></div>
+			  <div class="button">
+			  <div class="price"></div>
+			  <a class="addtocart">
+			  <div class="add">Adicionar</div>
+			  <div class="added">Adicionado!</div>
+			  </a>
+			  </div>
+		  </div>
+		</script>
+		<script id='cartItem' type='text/template'>
+		  <li><div class="cart-product">
+		  <input class="quantity" value="1">
+		  </div><div class="cart-description">
+		  <h3></h3>
+		  <span class="subtotal"></span>
+		  </div>
+          <div class='cart-minus'>  <h4> - </h4> </div></li>
+		</script>
+
+
+
+		<!-- / Product Templates for Criar Bebida -->
+
+		<script id='productTemplateCriar' type='text/template'>
+			<div class="productcenas">
+				<div class="merdascenas"></div>
+				<div class="buttoncenas">
+					<div class="pricecenas"></div>
+					<a class="addtocartcenas">
+						<div class="addcenas">Escolher</div>
+					</a>
+				</div>
+		  </div>
+		</script>
+
+
+
+
+		<!-- Contents for the Create cocktail button-->
+		<div class="menu_content" id="Create_Cocktail_content">
+			<div class="menu_header">Criar Cocktail</div>
+			<p class="bebidas">Selecione ingredientes:</p>
+			<section class="ingredientes"></section>
+		</div>
+
+		<!-- Contents for the Snacks button-->
+		<div class="menu_content" id="Snacks_content">
+			<div class="menu_header">Snacks</div>
+			<p class="bebidas">Comida</p>
+			<section class="comida"></section>
+		</div>
+
+
+		<!-- Footer Buttons-->
+		<div id="home_button_div">
+			<button class="button" id="home_button" onclick="location.href='barista.html';">
+			<img class="footer_icons" src="icons/home.png" id="rotate_icon">
+			<figcaption class="footer_button_text"> Início </figcaption>
+			</button>
+		</div>
+
+        <div class="rotate_button_div">
+
+        <button class="button" id="rotate_button" onclick="not_implemented_fn()">
+        <img class="footer_icons" src="icons/rotate.png" id="rotate_icon">
+        <figcaption class="footer_button_text"> Rodar </figcaption>
+        </button>
+
+        </div>
+
+        <div class="footer_buttons_div">
+
+        <button class="button" id="musicPlaying_button" title="Mumford & Sons - Believe">
+        <img class="footer_icons" src="icons/musicPlaying.png" id="rotate_icon">
+        <figcaption class="footer_button_text"> A tocar </figcaption>
+        </button>
+        
+        <button class="button" id="money_button" onclick="location.href='pagamento.html';">
+        <img class="footer_icons" src="icons/money.png" id="money_icon">
+        <figcaption class="footer_button_text"> Pagar </figcaption>
+        </button>
+
+        <button class="button" id="bill_button">
+        <img class="footer_icons" src="icons/bill.png" id="bill_icon">
+        <figcaption class="footer_button_text"> Conta </figcaption>
+        </button>
+
+        <button class="button" id="help_button" onclick="help_fn('#order_help_box')">
+        <img class="footer_icons" src="icons/help.png" id="help_icon">
+        <figcaption class="footer_button_text"> Ajuda </figcaption>
+        </button>
+
+        </div>
+
+
+				<!--Cart List-->
+
+				<div id='cart' class="cartcenas">
+					<span class="closecart">x</span>
+
+				<h2>Consultar Pedido</h2>
+
+				<ul class='cart-items'></ul>
+				<div class='total'>
+					<div class='subtotalTotal'>
+						Total
+						<span>€0.00</span>
+					</div>
+					<a class='checkout'>
+						Pedir
+					</a>
+					<p class='error'></p>
+				</div>
+				</div>
+
+
+
+
+        <!-- Not Implemeted Box -->
+        <div id="not_implemented_box" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span class="close">x</span>
+                <p>Funcionalidade nao implementada</p>
+            </div>
+        </div>
+
+        <!-- Not Implemeted Box -->
+        <div id="order_placed_box" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span class="close">x</span>
+                <p>O seu pedido está a caminho!</p>
+            </div>
+        </div>
+		
+		<!-- help Box -->
+        <div id="order_help_box" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span class="close">x</span>
+				<h2> Ajuda </h2>
+                <p> Este é o menu para pedir. Aqui encontra 3 botões.</p> 
+				<p><ol> 
+					<li>Primeiro mostra a lista de bebibas,onde pode
+					escolher uma bebida clicando no botão adicionar respetivo. Ao clicar é adicionado o item ao pedido.</li>
+					<li>Segundo botão mostra uma lista de ingredientes de onde pode escolher os ingredientes que quiser para criar 
+					a sua bebida,clicando no botão adicionar. Ao clicar o ingrediente é adicionado ao pedido.</li>
+					<li>Terceiro mostra-lhe uma lista de snacks que funciona como a das bebidas.
+					Ao clicar no botão Consultar Pedido, pode ver todos os items adicionados, podendo removê-los, 
+					clicando no menos do respetivo item e caso pretenda terminar o pedido basta ciclar no botão Pedir.</li>
+				</ol></p>
+            </div>
+        </div>
+
+		
+    <script src="coverflow/jquery.coverflow.js"></script>
+    <script src="keyboard/dist/js/jquery.keyboard.min.js"></script>
+    <script src="js/coverflow.js"></script>
+
+    <script src="js/modals.js"></script>
+	<script src="js/cookie_utils.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/ask_menu.js"></script>
+
+	</body>
+</html>

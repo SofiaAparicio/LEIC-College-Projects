@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<title>BarISTa</title>
+    	<link rel="stylesheet" href="css/style.css">
+    	<link rel="stylesheet" href="css/coverflow.css">
+        <link href='fonts/open_sans.css' rel='stylesheet' type='text/css'>
+
+
+       	<link rel="stylesheet" href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/ui-lightness/jquery-ui.css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.js"></script>
+
+        <!-- Optional: Reflection -->
+		<script type="text/javascript" src="coverflow/reflection.js"></script>
+
+		<!-- interpolate, depends on jQ 1.8.0+ -->
+		<script src="coverflow/jquery.interpolate.min.js"></script>
+
+		<!-- Coverflow -->
+		<script src="coverflow/jquery.coverflow.js"></script>
+
+		<link rel="stylesheet" href="keyboard/dist/css/keyboard.min.css">
+		<script src="keyboard/dist/js/jquery.keyboard.min.js"></script>
+		<script src="js/coverflow.js"></script>
+		<script src="js/cookie_utils.js"></script>
+		<script src="js/jquery.balloon.js"></script>
+
+	</head>
+
+	<body>
+
+		<div class="title">
+        Votar Musica
+        </div>
+        
+        <div id = "top_buttons_section">
+			<button class="top_button" id="top_music_button"> + Votadas </button>
+			<button class="top_button" id="all_button" > Todas </button>
+		</div>
+	
+		<form id="search_box" action="">
+			<input id="search" type="text" placeholder="Introduza o nome da música ou genero">
+			<input id="submit" type="button" value="Search">
+		</form>
+		
+		
+	
+
+		<!-- TODO: CoverFlow and Top Buttons-->
+		<br><br>
+		<div id="percentage_votes"></div>
+		<br><br>
+		<div class="coverflow">
+			<img class="cover" id="dummy" src="icons/z-m.jpg" />
+		</div>
+		<br>
+		<div id="covers_info">
+			<div id="artist_name"></div>
+			<div id="music_name"></div>
+		</div>
+		<br>
+
+		
+		<!-- Vote button -->
+		<div id="vote_section">
+		  <button id="vote_button">Votar</button>
+		</div>
+		
+		
+		<div id="home_button_div">
+			<button class="button" id="home_button" onclick="location.href='barista.html';">
+			<img class="footer_icons" src="icons/home.png" id="rotate_icon">
+			<figcaption class="footer_button_text"> Início </figcaption>
+			</button>
+		</div>
+		
+		
+        <div class="rotate_button_div">
+
+        <button class="button" id="rotate_button" onclick="not_implemented_fn()">
+        <img class="footer_icons" src="icons/rotate.png" id="rotate_icon">
+        <figcaption class="footer_button_text"> Rodar </figcaption>
+        </button>
+
+        </div>
+
+		
+        <div class="footer_buttons_div">
+		
+        <button class="button" id="musicPlaying_button" title="Mumford & Sons - Believe">
+        <img class="footer_icons" src="icons/musicPlaying.png" id="rotate_icon">
+        <figcaption class="footer_button_text"> A tocar </figcaption>
+        </button>
+		
+        <button class="button" id="money_button" onclick="location.href='pagamento.html';">
+        <img class="footer_icons" src="icons/money.png" id="money_icon">
+        <figcaption class="footer_button_text"> Pagar </figcaption>
+        </button>
+
+        <button class="button" id="bill_button">
+        <img class="footer_icons" src="icons/bill.png" id="bill_icon">
+        <figcaption class="footer_button_text"> Conta </figcaption>
+        </button>
+
+        <button class="button" id="help_button" onclick="help_fn('#music_help_box')">
+        <img class="footer_icons" src="icons/help.png" id="help_icon">
+        <figcaption class="footer_button_text"> Ajuda </figcaption>
+        </button>
+
+        </div>
+
+
+        <!-- Not Implemeted Box -->
+        <div id="not_implemented_box" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span class="close">x</span>
+                <p>Funcionalidade nao implementada</p>
+            </div>
+        </div>
+		
+		<!-- Help Box -->
+        <div id="music_help_box" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span class="close">x</span>
+				<h2> Ajuda </h2>
+                <p> Este é o menu para votar numa música.</p>
+				<ol>
+					<li>Inicialmente encontra uma lista com todas as músicas disponíveis para votação.</li>
+					<li> Carregando no botão +Votadas, é-lhe mostrado o top das mais votadas.</li>
+					<li> O botão Todas leva-o(a) novamente à lista inicial.</li>
+					<li>Debaixo de cada música encontra um botão Votar,que ao clicar, soma o seu voto aos restantes.</li> 
+					<li> Na parte da procura, pode pesquisar o cantor,o género ou a música em que pretende votar.</li>
+				</ol>
+            </div>
+        </div>
+		
+		<!-- Vote Message -->
+		<div id="vote_message" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span id="close_vote_message" class="close">x</span>
+                <p>O seu voto foi aceite, obrigado!</p>
+            </div>
+        </div>
+		
+		<!-- Music Not Found Message -->
+		<div id="not_found_message" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span id="close_not_found_message" class="close">x</span>
+                <p>Música não encontrada.</p>
+            </div>
+        </div>
+		
+		<!-- None voted Message -->
+		<div id="none_voted_message" class="modal">
+
+            <!-- Box content -->
+            <div class="modal_content">
+                <span id="close_none_voted_message" class="close">x</span>
+                <p>Nenhuma música ainda votada.</p>
+            </div>
+        </div>
+
+    <script src="js/cookie_utils.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/modals.js"></script>
+	</script>
+	</body>
+</html>
